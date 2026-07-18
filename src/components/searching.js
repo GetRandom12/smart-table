@@ -3,8 +3,8 @@ import {rules, createComparison, defaultRules} from "../lib/compare.js";
 
 export function initSearching(searchField) {
     const compare = createComparison(
-        defaultRules.skipEmptyTargetValues,
-        rules.searchMultipleFields (searchField, ['date', 'customer', 'seller'], false)
+        ["skipEmptyTargetValues"],
+        [rules.searchMultipleFields (searchField, ['date', 'customer', 'seller'], false)]
     );
 
     // @todo: #5.1 — настроить компаратор
