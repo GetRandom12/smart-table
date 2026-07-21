@@ -32,8 +32,15 @@ export function initFiltering(elements, indexes) {
 
 
         // @todo: #4.5 — отфильтровать данные используя компаратор
-        const { totalForm, totalTo, ...filterState } = state;
-        filterState.total =[totalForm, totalTo];
+        const { totalForm, totalTo, ...rest } = state;
+        const filterState = {
+            ...rest,
+            total: [
+                totalForm === "" ? "" : Number(totalForm),
+                totalTo === "" ? "" : Number(totalTo)
+            ]
+        };
+        
         return data.filter(row => compare(row, filterState));
     }
 }
