@@ -56,7 +56,8 @@ const sampleTable = initTable(
   render,
 );
 
-const applySearching = initSearching(sampleTable.search.elements.searchField.name);
+const applySearching = initSearching(sampleTable.search.elements.searchField.querySelector("input").name);
+console.log(sampleTable.search.elements.searchField.querySelector("input").name);
 
 const applyFiltering = initFiltering(sampleTable.filter.elements, {    // передаём элементы фильтра
     searchBySeller: indexes.sellers                                    // для элемента с именем searchBySeller устанавливаем массив продавцов
